@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="about.css">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "poppins";
+        background: #f8c8c8;
+      }
+      .contact-container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-top: 2rem;
+      }
+      .contact-card {
+        background: linear-gradient(#c97469, #f38ba5);
+        border-radius: 20px;
+        padding: 40px 50px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 450px;
+      }
+
+      .contact-left {
+        display: flex;
+        flex-direction: column;
+        /* align-items: start; */
+        gap: 1rem;
+      }
+      .contact-left-title {
+        font-weight: 600;
+        color: #8b0f2e;
+        font-size: 40;
+        margin-bottom: 5px;
+      }
+      .contact-left-title hr {
+        border: none;
+        width: 120px;
+        height: 5px;
+        background-color: #f194ab;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      .contact-input {
+        width: 100%;
+        height: 50px;
+        border: none;
+        outline: none;
+        padding-left: 25px;
+        font-weight: 500;
+        color: #666;
+        border-radius: 15px;
+      }
+      .contact-left textarea {
+        height: 140px;
+        padding-top: 15px;
+        border-radius: 20px;
+      }
+      .contact-input:focus {
+        border: 2px solid #8b0f2e;
+        outline: none;
+      }
+      .contact-input::placeholder {
+        color: #8d8a8a;
+      }
+      .contact-left button {
+        /* display: flex; */
+        /* align-items: center; */
+        padding: 15px 30px;
+        font-size: 16px;
+        color: #fff;
+        /* gap: 10px; */
+        background: linear-gradient(270deg, #ff994f, #fa6d86);
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+      .error {
+        color: red;
+        font-weight: 400;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-nav">
+      <nav>
+        <h2 class="logo">Kalu Victory</h2>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <main data-testid="test-contact-page">
+      <div class="contact-container">
+        <div class="contact-card">
+          <form id="form" class="contact-left">
+            <div class="contact-left-title">
+              <h2>Get in Touch</h2>
+              <hr />
+            </div>
+            <div>
+              <label for="name">Full name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="contact-input"
+                data-testid="test-contact-name"
+                tabindex="1"
+                aria-describedby="nameError"
+                required
+              />
+              <span id="nameError" class="error" hidden
+                >Full name is required</span
+              >
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                class="contact-input"
+                data-testid="test-contact-email"
+                tabindex="2"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                required
+                aria-describedby="emailError"
+              />
+              <span id="emailError" class="error" hidden
+                >Please enter a valid email address</span
+              >
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                class="contact-input"
+                data-testid="test-contactMessage"
+                tabindex="3"
+                minlength="10"
+                aria-describedby="messageError"
+                required
+              ></textarea>
+              <span id="messageError" class="error" hidden
+                >Message must be 10 characters or more</span
+              >
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      let form = document.getElementById('form')
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('Form Submission confirmed!')
+      })
+
+      
+    </script>
+  </body>
+</html>

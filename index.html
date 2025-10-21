@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalu Victory-profile card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  
+  <body>
+    <div class="top-nav">
+      <nav>
+        <h2 class="logo">Kalu Victory</h2>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container">
+      <!-- Profile Card  -->
+    <article data-testid="test-profile-card" class="profile-card">
+      <!-- Avatar Image  -->
+      <figure class="avatar-container">
+        <img
+          src="/Beautiful-me.jpg"
+          alt="profile picture of Kalu Victory"
+          data-testid="test-user-avatar"
+        />
+      </figure>
+
+      <div class="profile-info">
+        <!-- Header  -->
+        <header>
+          <h2 data-testid="test-user-name">Kalu Victory</h2>
+
+          <p data-testid="test-user-bio">
+            A curious and creative spirit who loves to explore new ideas, share
+            knowledge, and create meaningful work through every opportunity.
+          </p>
+          <p class="time">
+            Current Time (ms):
+            <span id="userTime" data-testid="test-user-time"></span>
+          </p>
+        </header>
+
+        <!-- Social Media Links  -->
+        <nav aria-label="Social media links">
+          <ul class="social-links" data-testid="test-user-social-links">
+            <li>
+              <a
+                href="https://x.com/victoriakalu_?s=21"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-Twitter"
+              >
+                <i class="fa-brands fa-twitter icon"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Vic-toria-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-Github"
+              >
+                <i class="fa-brands fa-github icon"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/victory-kalu-63637a318?"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-LinkedIn"
+              >
+                <i class="fa-brands fa-linkedin icon"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Hobbies list  -->
+        <section>
+          <h3>Hobbies</h3>
+          <ul data-testid="test-user-hobbies">
+            <li>Reading</li>
+            <li>Watching movies</li>
+            <li>Trying out new things and getting good at it</li>
+            <li>Cooking</li>
+          </ul>
+        </section>
+
+        <!-- Dislikes List  -->
+        <section>
+          <h3>Dislikes</h3>
+          <ul data-testid="test-user-dislikes">
+            <li>Being a "I know it all" kind of person.</li>
+            <li>Chewing with your mouth open</li>
+            <li>Being too disorganized</li>
+          </ul>
+        </section>
+      </div>
+    </article>
+    </div>
+
+
+    <script>
+        let userTime = document.getElementById('userTime');
+        userTime.innerHTML = Date.now();
+    </script>
+  </body>
+</html>
